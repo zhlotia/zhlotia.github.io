@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zainab Lotia — Projects</title>
+<meta name="description" content="A little collection of side projects by Zainab Lotia — small, cozy tools made for fun." />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Zainab Lotia — Projects" />
+<meta property="og:description" content="A little collection of cozy side projects." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg-1: #fdf2f6;   /* soft pink */
+    --bg-2: #f3f0fb;   /* lilac */
+    --bg-3: #eef6fb;   /* sky */
+    --ink: #322a45;    /* deep plum */
+    --ink-soft: #6d6484;
+    --card: #ffffff;
+    --card-border: #f0ecf6;
+    --accent: #ff8fa8; /* pink */
+    --accent-2: #ffc978; /* peach */
+    --accent-3: #9db9f0; /* periwinkle */
+    --shadow: 0 18px 40px -22px rgba(80, 60, 120, 0.35);
+    --shadow-hover: 0 28px 55px -20px rgba(80, 60, 120, 0.45);
+    --radius: 26px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "Nunito", system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(1200px 600px at 15% -5%, var(--bg-1), transparent 60%),
+      radial-gradient(1000px 700px at 95% 10%, var(--bg-3), transparent 55%),
+      linear-gradient(160deg, var(--bg-2), #ffffff 70%);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    text-align: center;
+    padding: 96px 0 40px;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #c05a78;
+    background: #ffffffcc;
+    border: 1px solid var(--card-border);
+    padding: 7px 16px;
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+  }
+
+  h1 {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    line-height: 1.08;
+    margin: 22px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  h1 .wave { display: inline-block; }
+
+  .role {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #c05a78;
+    margin: 0 0 6px;
+    letter-spacing: 0.01em;
+  }
+
+  .tagline {
+    font-size: clamp(1.05rem, 2.4vw, 1.22rem);
+    color: var(--ink-soft);
+    max-width: 34ch;
+    margin: 0 auto;
+  }
+
+  /* ---------- Projects ---------- */
+  main { padding: 32px 0 24px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.28s cubic-bezier(.2,.8,.2,1), box-shadow 0.28s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .thumb {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: linear-gradient(160deg, var(--bg-2), var(--bg-3));
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .card:hover .thumb img { transform: scale(1.04); }
+
+  .card-body {
+    padding: 20px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .card-title {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 700;
+    font-size: 1.28rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .card-emoji { font-size: 1.15rem; }
+
+  .card-desc {
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    margin: 0;
+    flex: 1;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 4px;
+  }
+
+  .tag {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    color: #7a6f93;
+    background: #f6f2fb;
+    border: 1px solid var(--card-border);
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+
+  .card-link {
+    margin-top: 10px;
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: #c05a78;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card-link .arrow { transition: transform 0.25s ease; }
+  .card:hover .card-link .arrow { transform: translate(3px, -3px); }
+
+  /* accent bar peeking at top of card */
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+    opacity: 0;
+    transition: opacity 0.28s ease;
+    z-index: 2;
+  }
+  .card:hover::before { opacity: 1; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    text-align: center;
+    padding: 56px 0 72px;
+    color: var(--ink-soft);
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+
+  .socials a {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--ink);
+    text-decoration: none;
+    background: #ffffffcc;
+    border: 1px solid var(--card-border);
+    padding: 9px 18px;
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  .socials a:hover { transform: translateY(-2px); color: #c05a78; }
+
+  .footer-note {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    opacity: 0.85;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 640px) {
+    header { padding: 64px 0 24px; }
+    .grid { grid-template-columns: 1fr; gap: 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <span class="eyebrow">✦ things i've made</span>
+      <h1>Hi, I'm Zainab <span class="wave">🌸</span></h1>
+      <p class="role">Workday Security Consultant @ Deloitte · building little things on the side</p>
+      <p class="tagline">By day I work in enterprise security &amp; compliance. In my spare time I design and build small, delightful web tools.</p>
+    </header>
+
+    <main>
+      <div class="grid">
+
+        <a class="card" href="https://couldvebeenanemail.com/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="assets/couldvebeenanemail.png" alt="Could This Have Been an Email? — a 60-second gut-check quiz" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title"><span class="card-emoji">✉️</span> Could This Have Been an Email?</h2>
+            <p class="card-desc">A tiny quiz to help you figure out whether that meeting really should've just been an email.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+            <span class="card-link">Visit <span class="arrow">↗</span></span>
+          </div>
+        </a>
+
+        <a class="card" href="https://zhlotia.github.io/hydration-garden/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="assets/hydration-garden.png" alt="Hydration Garden — pour glasses of water to grow your plant" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title"><span class="card-emoji">🌻</span> Hydration Garden</h2>
+            <p class="card-desc">Keep yourself hydrated through the day and watch your little garden bloom right alongside you.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">localStorage</span></div>
+            <span class="card-link">Visit <span class="arrow">↗</span></span>
+          </div>
+        </a>
+
+        <a class="card" href="https://zhlotia.github.io/pocket-calm/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="assets/pocket-calm.png" alt="Pocket Calm — a short guided breathing reset" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title"><span class="card-emoji">☁️</span> Pocket Calm</h2>
+            <p class="card-desc">Take a minute to breathe and reset — a gentle little pause whenever the day gets loud.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Web Audio</span></div>
+            <span class="card-link">Visit <span class="arrow">↗</span></span>
+          </div>
+        </a>
+
+      </div>
+    </main>
+
+    <footer>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/zlotia/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/zhlotia" target="_blank" rel="noopener">GitHub</a>
+        <!-- Add email or other links anytime -->
+      </div>
+      <p class="footer-note">Handcoded in vanilla HTML, CSS &amp; JavaScript · made with a lot of pastel</p>
+      <p class="footer-note">© <span id="year"></span> Zainab Lotia</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Cloudflare Web Analytics — cookieless, no personal data.
+       Replace YOUR_TOKEN_HERE with the token from your Cloudflare dashboard
+       (Analytics & Logs → Web Analytics → Add a site). -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "YOUR_TOKEN_HERE"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
